@@ -141,27 +141,30 @@ public class Network_Manager
 
     private void ManageData(Client client, string data)
     {
+        //Separo los datos enviados, primero el comando y luego los parametros adicionales
         string[] parameters = data.Split('/');
+
+        //Un console log para mirar que data este aqui
         Console.WriteLine(data);
         switch (parameters[0])
         {
-            //login 
+            //caso login 
             case "0":
                 Login(parameters[1], parameters[2]);
                 break;
-            //ping 
+            //caso ping 
             case "1":
                 ReceivePing(client);
                 break;
-            //registro 
+            //caso registro 
             case "2":
                 Register(parameters[1], parameters[2], parameters[3]);
                 break;
-            //obtener info de las razas 
+            //caso obtener info de las razas 
             case "3":
                 GetRaceData();
                 break;
-            //obtener version del juego 
+            //caso obtener version del juego 
             case "4":
                 GetVersion();
                 break;
@@ -169,21 +172,27 @@ public class Network_Manager
         }
     }
 
+    //Manejado del caso "0" aka Login que comprueva que el usuario y la password existan consultando
+    //con la DB a partir de los datos que recibe de Unity desde el Login_Script
     private void Login(string username, string password)
     {
         Console.WriteLine("Peticion de " + username + " usando la pass: " + password);
     }
 
+    //Manejado del caso "1" aka Register que inserta el usuario con su password y su raza
+    //a la DB a partir de los datos que recibe de Unity desde el Register_Script
     private void Register(string username, string password, string race)
     {
         Console.WriteLine("Peticion de " + username + " usando la pass: " + password + " con la raza: " + race);
     }
 
+    //Manejado del caso "2" aka GetRaceData
     private void GetRaceData()
     {
 
     }
 
+    //Manejado del caso "3" aka GetVersion
     private void GetVersion()
     {
 

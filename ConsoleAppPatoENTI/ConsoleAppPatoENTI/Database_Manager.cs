@@ -41,12 +41,26 @@ class Database_Manager
         //connection.Close();
     }
 
-    void SelectExample(MySqlConnection connection)
+    void LoginSelect(MySqlConnection connection, string param1, string param2)
     {
+        //Abrimos la connexion con la DB
+        try
+        {
+            connection.Open();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        //Abrimos el reader que nos permite accesar al stream de rows de SQL
         MySqlDataReader reader;
         MySqlCommand command = connection.CreateCommand();
 
-        command.CommandText = "Select * from users";
+        // la query para hacer el select
+        command.CommandText = "Select * from users where nick = " + param1 + " and password = " + param2;
+
+        //Ejecucion de la query y console log del nick para comprovar que haya ido bien
         try
         {
             reader = command.ExecuteReader();
@@ -59,6 +73,9 @@ class Database_Manager
         {
             Console.WriteLine(ex.Message);
         }
+
+        //Cerramos la connexion con la DB
+        connection.Close();
     }
 
     
