@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Miquel Nadal\\source\\repos\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj": {}
+    "D:\\Repos\\PatoEnti_Server\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Miquel Nadal\\source\\repos\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj": {
+    "D:\\Repos\\PatoEnti_Server\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Miquel Nadal\\source\\repos\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj",
+        "projectUniqueName": "D:\\Repos\\PatoEnti_Server\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj",
         "projectName": "ConsoleAppPatoENTI",
-        "projectPath": "C:\\Users\\Miquel Nadal\\source\\repos\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj",
-        "packagesPath": "C:\\Users\\Miquel Nadal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Miquel Nadal\\source\\repos\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\obj\\",
+        "projectPath": "D:\\Repos\\PatoEnti_Server\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI.csproj",
+        "packagesPath": "C:\\Users\\miquel.nadal\\.nuget\\packages\\",
+        "outputPath": "D:\\Repos\\PatoEnti_Server\\ConsoleAppPatoENTI\\ConsoleAppPatoENTI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Miquel Nadal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\miquel.nadal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -56,17 +55,34 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     }

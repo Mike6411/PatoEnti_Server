@@ -37,3 +37,42 @@ C:\Users\Miquel Nadal\source\repos\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Deb
 C:\Users\Miquel Nadal\source\repos\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Miquel Nadal\source\repos\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\Miquel Nadal\source\repos\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.csproj.CopyComplete
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\ConsoleAppPatoENTI.exe
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\ConsoleAppPatoENTI.deps.json
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\ConsoleAppPatoENTI.runtimeconfig.json
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\ConsoleAppPatoENTI.runtimeconfig.dev.json
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\ConsoleAppPatoENTI.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\ConsoleAppPatoENTI.pdb
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\MySql.Data.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\ZstdNet.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\comerr64.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\gssapi64.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\k5sprt64.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\krb5_64.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\krbcc64.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.csproj.AssemblyReference.cache
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.AssemblyInfoInputs.cache
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.AssemblyInfo.cs
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.csproj.CoreCompileInputs.cache
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.csproj.CopyComplete
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.dll
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.pdb
+D:\Repos\PatoEnti_Server\ConsoleAppPatoENTI\ConsoleAppPatoENTI\obj\Debug\netcoreapp3.1\ConsoleAppPatoENTI.genruntimeconfig.cache

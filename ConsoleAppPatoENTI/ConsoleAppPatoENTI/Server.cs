@@ -22,7 +22,7 @@ class Server
         {
             network_Manager.CheckConnection();
             network_Manager.CheckMessage();
-            network_Manager.DisconnectClient();
+            network_Manager.DisconnectClients();
         }
 
         void StartService()
