@@ -62,7 +62,7 @@ class Database_Manager
         // 2 corresponde a la raza 2
 
         // la query para hacer el select
-        command.CommandText = "Select * from users where nick = '" + param1 + "' and password = " + param2;
+        command.CommandText = "SELECT * FROM users WHERE nick = '" + param1 + "' AND password = " + param2;
 
         //Ejecucion de la query y console log del nick para comprovar que user exista
         try
@@ -82,7 +82,7 @@ class Database_Manager
 
         Console.WriteLine("User verified");
 
-        command.CommandText = "Select userrace from users where nick = '" + param1 + "'";
+        command.CommandText = "SELECT userrace FROM users WHERE nick = '" + param1 + "'";
 
         //Query para pillar la raza del user
         try
@@ -119,7 +119,7 @@ class Database_Manager
         MySqlCommand command = connection.CreateCommand();
 
         // la query para hacer el select
-        command.CommandText = "INSERT INTO `users` (`id_user`, `nick`, `password`, `userrace`) VALUES (NULL, 'Pato', '321', '1')";
+        command.CommandText = "INSERT INTO `users` (`id_user`, `nick`, `password`, `userrace`) VALUES (NULL, '"+param1+ "', '"+param2+ "', '"+param3+"')";
 
         //Ejecucion de la query y console log del nick para comprovar que haya ido bien
         try
@@ -127,8 +127,11 @@ class Database_Manager
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader["nick"].ToString());
+                Console.WriteLine("Insertando nuevo user");
             }
+
+            Console.WriteLine("Insertando nuevo user");
+            reader.Close();
         }
         catch (Exception ex)
         {
@@ -138,7 +141,41 @@ class Database_Manager
         End_Database_Service();
     }
 
-    public void RaceQuery()
+    public string RaceQuery()
+    {
+        Start_Database_Service();
+
+        string temp = "";
+
+        //Abrimos el reader que nos permite accesar al stream de rows de SQL
+        MySqlDataReader reader;
+        MySqlCommand command = connection.CreateCommand();
+
+        // la query para hacer el select
+        command.CommandText = "SELECT * FROM `races` WHERE 1";
+
+        //Ejecucion de la query y console log del nick para comprovar que haya ido bien
+        try
+        {
+            reader = command.ExecuteReader();
+            Console.WriteLine("obteniendo los datos de la raza");
+            while (reader.Read())
+            {
+                Console.WriteLine(reader.ToString());
+            }
+            reader.Close();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        End_Database_Service();
+        return temp;
+
+    }
+
+    public void VersionQuery()
     {
         Start_Database_Service();
 
@@ -147,16 +184,18 @@ class Database_Manager
         MySqlCommand command = connection.CreateCommand();
 
         // la query para hacer el select
-        //command.CommandText = "Insert into users where nick = " + param1 + " and password = " + param2;
+        command.CommandText = "SELECT * FROM `version`";
 
         //Ejecucion de la query y console log del nick para comprovar que haya ido bien
         try
         {
             reader = command.ExecuteReader();
+            Console.WriteLine("Cogiendo la version de la db");
             while (reader.Read())
             {
-                Console.WriteLine(reader["nick"].ToString());
+                Console.WriteLine(reader.ToString());
             }
+            reader.Close();
         }
         catch (Exception ex)
         {
@@ -166,8 +205,10 @@ class Database_Manager
         End_Database_Service();
     }
 
-    public void VersionQuery(string param1, string param2)
-    {
+    //funcion que se hace al inicio para mirar si puede hacer la db al principio
+    public bool EstaLaDBInetrrogante() {
+
+        bool response = false;
         Start_Database_Service();
 
         //Abrimos el reader que nos permite accesar al stream de rows de SQL
@@ -175,7 +216,7 @@ class Database_Manager
         MySqlCommand command = connection.CreateCommand();
 
         // la query para hacer el select
-        command.CommandText = "Insert into users where nick = " + param1 + " and password = " + param2;
+        command.CommandText = "SELECT * FROM `races` WHERE 1";
 
         //Ejecucion de la query y console log del nick para comprovar que haya ido bien
         try
@@ -183,15 +224,19 @@ class Database_Manager
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader["nick"].ToString());
+                Console.WriteLine("Si esta yupi :D");
+                response = true;
             }
+            reader.Close();
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            Console.WriteLine(ex.Message);  
+            Console.WriteLine("No esta, MUERE  >:)");
         }
 
         End_Database_Service();
+        return response;
     }
 
 

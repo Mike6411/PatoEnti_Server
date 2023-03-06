@@ -29,8 +29,6 @@ class Server
         {
             //Iniciar servicios de red
             network_Manager.Start_Network_Service();
-            //Obtener los datos de la DB
-            network_Manager.GetRaceData();
         }
     }
 }

@@ -170,40 +170,51 @@ public class Network_Manager
             case "4":
                 GetVersion();
                 break;
+            //caso mirar que la DB esté 
+            case "5":
+                CheckOnDB();
+                break;
 
         }
     }
 
-    //Manejado del caso "0" aka Login que comprueva que el usuario y la password existan consultando ->
+    //Manejado del caso "1" aka Login que comprueva que el usuario y la password existan consultando ->
     //con la DB a partir de los datos que recibe de Unity desde el Login_Script
     private void Login(string username, string password)
     {
         int raceresult = 4;
-
         Console.WriteLine("Peticion de " + username + " usando la pass: " + password);
         raceresult = _DB_MANAGER.LoginQuery(username, password);
         Console.WriteLine(raceresult);
     }
 
-    //Manejado del caso "1" aka Register que inserta el usuario con su password y su raza ->
+    //Manejado del caso "2" aka Register que inserta el usuario con su password y su raza ->
     //a la DB a partir de los datos que recibe de Unity desde el Register_Script
     private void Register(string username, string password, string race)
     {
         Console.WriteLine("Peticion de " + username + " usando la pass: " + password + " con la raza: " + race);
+        _DB_MANAGER.RegisterQuery(username, password, race);
     }
 
-    //Manejado del caso "2" aka GetRaceData y tambien la inicialización de los datos de la db
-    //basicamente para comprobar que este allí desde buen principio ya que abrimos y cerramos la connexion
-    //cada vez que usamos una funcion que requiera conectarse para estalviarse problemas de caida de la db
+    //Manejado del caso "3" aka GetRaceData que es un get de las 2 razas
     public void GetRaceData()
     {
-
+        Console.WriteLine("Ejecutando funcion GetRaceData");
+        _DB_MANAGER.RaceQuery();
     }
 
-    //Manejado del caso "3" aka GetVersion
-    private void GetVersion()
+    //Manejado del caso "4" aka GetVersion
+    public void GetVersion()
     {
+        Console.WriteLine("Ejecutando funcion GetVersion");
+        _DB_MANAGER.VersionQuery();
+    }
 
+    //Manejado del caso "3" aka GetVersion que mira que la DB este allí desde buen principio ya que abrimos y cerramos la connexion
+    //cada vez que usamos una funcion que requiera conectarse para estalviarse problemas de caida de la db
+    public void CheckOnDB()
+    {
+        _DB_MANAGER.EstaLaDBInetrrogante();
     }
 
     private void SendPing(Client client)
@@ -261,53 +272,3 @@ public class Network_Manager
     }
 
 }
-
-/*string[] parameters = data.Split('/');
-        Console.WriteLine(data);
-        switch (parameters[0])
-        {
-            //login 
-            case "0":
-                Login(parameters[1], parameters[2]);
-                break;
-            //ping 
-            case "1":
-                ReceivePing(client);
-                break;
-            //registro 
-            case "2":
-                Register(parameters[1], parameters[2], parameters[3]);
-                break;
-            //obtener info de las razas 
-            case "3":
-                GetRaceData();
-                break;
-            //obtener version del juego 
-            case "4":
-                GetVersion();
-                break;
-
-        }
-
-    private void GetRaceData()
-    {
-
-    }
-
-    private void GetVersion()
-    {
-
-    }
- 
-
-        private void Login(string username, string password)
-    {
-        Console.WriteLine("Peticion de " + username + " usando la pass: " + password);
-    }
-
-    private void Register(string username, string password, string race)
-    {
-        Console.WriteLine("Peticion de " + username + " usando la pass: " + password + " con la raza: " + race);
-    }
-
- */
