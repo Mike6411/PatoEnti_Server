@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System;
 using System.IO;
+using MySqlX.XDevAPI;
+using Org.BouncyCastle.Asn1.Crmf;
 
 public class Network_Manager
 {
@@ -164,11 +166,11 @@ public class Network_Manager
                 break;
             //caso obtener info de las razas 
             case "3":
-                GetRaceData();
+                GetRaceData(client);
                 break;
             //caso obtener version del juego 
             case "4":
-                GetVersion();
+                GetVersion(client);
                 break;
             //caso mirar que la DB esté 
             case "5":
@@ -197,17 +199,55 @@ public class Network_Manager
     }
 
     //Manejado del caso "3" aka GetRaceData que es un get de las 2 razas
-    public void GetRaceData()
+    private void GetRaceData(Client client)
     {
+        string temp = "";
+
         Console.WriteLine("Ejecutando funcion GetRaceData");
-        _DB_MANAGER.RaceQuery();
+        temp = _DB_MANAGER.RaceQuery();
+
+        try
+        {
+            //Instanciamos el writer para enviar el mensaje de toda la informacion de las razas
+            StreamWriter writer = new StreamWriter(client.GetTcpClient().GetStream());
+
+            //Enviamos el ping
+            writer.WriteLine(temp);
+
+            //Limpiamos el bufer de envio para evitar que siga acumulando datos
+            writer.Flush();
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message + " with client" + client.GetNick());
+        }
     }
 
     //Manejado del caso "4" aka GetVersion
-    public void GetVersion()
+    private void GetVersion(Client client)
     {
+        string temp = "";
+
         Console.WriteLine("Ejecutando funcion GetVersion");
-        _DB_MANAGER.VersionQuery();
+        temp = _DB_MANAGER.VersionQuery();
+
+        try
+        {
+            //Instanciamos el writer para enviar el mensaje de toda la informacion de las razas
+            StreamWriter writer = new StreamWriter(client.GetTcpClient().GetStream());
+
+            //Enviamos el ping
+            writer.WriteLine(temp);
+
+            //Limpiamos el bufer de envio para evitar que siga acumulando datos
+            writer.Flush();
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message + " with client" + client.GetNick());
+        }
     }
 
     //Manejado del caso "3" aka GetVersion que mira que la DB este allí desde buen principio ya que abrimos y cerramos la connexion

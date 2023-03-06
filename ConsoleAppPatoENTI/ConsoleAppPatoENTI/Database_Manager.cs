@@ -162,6 +162,7 @@ class Database_Manager
             while (reader.Read())
             {
                 Console.WriteLine(reader.ToString());
+                temp = reader.ToString();
             }
             reader.Close();
         }
@@ -175,9 +176,11 @@ class Database_Manager
 
     }
 
-    public void VersionQuery()
+    public string VersionQuery()
     {
         Start_Database_Service();
+
+        string temp = "";
 
         //Abrimos el reader que nos permite accesar al stream de rows de SQL
         MySqlDataReader reader;
@@ -194,6 +197,7 @@ class Database_Manager
             while (reader.Read())
             {
                 Console.WriteLine(reader.ToString());
+                temp = reader.ToString();
             }
             reader.Close();
         }
@@ -203,6 +207,7 @@ class Database_Manager
         }
 
         End_Database_Service();
+        return temp;
     }
 
     //funcion que se hace al inicio para mirar si puede hacer la db al principio
