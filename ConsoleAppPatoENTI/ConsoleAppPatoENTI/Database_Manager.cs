@@ -11,7 +11,7 @@ class Database_Manager
     const string connectionString ="Server=db4free.net;Port=3306;database=patojuego;Uid=themikening;password=Patata10@; SSL Mode = None; connect timeout = 3600; default command timeout = 3600;";
     MySqlConnection connection = new MySqlConnection(connectionString);
 
-
+    //No me acuerdo si al final he usado esto o no pero prefiero no arriesgarme a petar la cosa borrandolo
     public void Initial_Database_Service()
     {
         try
@@ -141,6 +141,7 @@ class Database_Manager
         End_Database_Service();
     }
 
+    //Funcion que te devuelve la respuesta entera del la DB sobre la query de SELECT
     public string RaceQuery()
     {
         Start_Database_Service();
@@ -211,9 +212,8 @@ class Database_Manager
     }
 
     //funcion que se hace al inicio para mirar si puede hacer la db al principio
-    public bool EstaLaDBInetrrogante() {
+    public void EstaLaDBInetrrogante() {
 
-        bool response = false;
         Start_Database_Service();
 
         //Abrimos el reader que nos permite accesar al stream de rows de SQL
@@ -230,7 +230,6 @@ class Database_Manager
             while (reader.Read())
             {
                 Console.WriteLine("Si esta yupi :D");
-                response = true;
             }
             reader.Close();
         }
@@ -241,7 +240,6 @@ class Database_Manager
         }
 
         End_Database_Service();
-        return response;
     }
 
 
