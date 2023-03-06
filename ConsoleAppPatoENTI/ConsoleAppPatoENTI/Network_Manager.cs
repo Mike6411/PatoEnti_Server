@@ -13,7 +13,7 @@ public class Network_Manager
     private int lastTimePing;
     private List<Client> disconnectClients;
 
-    new Database_Manager databaseManager;
+    Database_Manager _DB_MANAGER = new Database_Manager();
 
     public Network_Manager()
     {
@@ -178,10 +178,10 @@ public class Network_Manager
     //con la DB a partir de los datos que recibe de Unity desde el Login_Script
     private void Login(string username, string password)
     {
-        int raceresult;
+        int raceresult = 4;
 
         Console.WriteLine("Peticion de " + username + " usando la pass: " + password);
-        raceresult = databaseManager.LoginQuery(username, password);
+        raceresult = _DB_MANAGER.LoginQuery(username, password);
         Console.WriteLine(raceresult);
     }
 
@@ -192,8 +192,10 @@ public class Network_Manager
         Console.WriteLine("Peticion de " + username + " usando la pass: " + password + " con la raza: " + race);
     }
 
-    //Manejado del caso "2" aka GetRaceData
-    private void GetRaceData()
+    //Manejado del caso "2" aka GetRaceData y tambien la inicialización de los datos de la db
+    //basicamente para comprobar que este allí desde buen principio ya que abrimos y cerramos la connexion
+    //cada vez que usamos una funcion que requiera conectarse para estalviarse problemas de caida de la db
+    public void GetRaceData()
     {
 
     }

@@ -7,24 +7,23 @@ using MySql.Data.MySqlClient;
 
 class Database_Manager
 {
-    private MySqlConnection conn;
-
-    public static Database_Manager _DB_MANAGER = null;
-
     //el churro que necessitamos para que la connexion funcione NO TOCAR
     const string connectionString ="Server=db4free.net;Port=3306;database=patojuego;Uid=themikening;password=Patata10@; SSL Mode = None; connect timeout = 3600; default command timeout = 3600;";
     MySqlConnection connection = new MySqlConnection(connectionString);
 
-    private Database_Manager() {
-        if (_DB_MANAGER == null)
+
+    public void Initial_Database_Service()
+    {
+        try
         {
-            _DB_MANAGER= new Database_Manager();
+            connection.Open();
         }
-        else
+        catch (Exception ex)
         {
-            _DB_MANAGER = this;
+            Console.WriteLine(ex.Message);
         }
 
+        connection.Close();
     }
 
     // funcion para abrir la connexion a db
@@ -38,8 +37,6 @@ class Database_Manager
         {
             Console.WriteLine(ex.Message);
         }
-
-        connection.Close();
     }
 
     //funcion para cerrar la connexion a db
@@ -65,7 +62,7 @@ class Database_Manager
         // 2 corresponde a la raza 2
 
         // la query para hacer el select
-        command.CommandText = "Select * from users where nick = " + param1 + " and password = " + param2;
+        command.CommandText = "Select * from users where nick = '" + param1 + "' and password = " + param2;
 
         //Ejecucion de la query y console log del nick para comprovar que user exista
         try
@@ -85,7 +82,7 @@ class Database_Manager
 
         Console.WriteLine("User verified");
 
-        command.CommandText = "Select userrace from users where nick = " + param1 + "";
+        command.CommandText = "Select userrace from users where nick = '" + param1 + "'";
 
         //Query para pillar la raza del user
         try
@@ -122,7 +119,7 @@ class Database_Manager
         MySqlCommand command = connection.CreateCommand();
 
         // la query para hacer el select
-        command.CommandText = "Insert into users where nick = " + param1 + " and password = " + param2;
+        command.CommandText = "INSERT INTO `users` (`id_user`, `nick`, `password`, `userrace`) VALUES (NULL, 'Pato', '321', '1')";
 
         //Ejecucion de la query y console log del nick para comprovar que haya ido bien
         try
@@ -141,7 +138,7 @@ class Database_Manager
         End_Database_Service();
     }
 
-    public void RaceQuery(string param1, string param2)
+    public void RaceQuery()
     {
         Start_Database_Service();
 
@@ -150,7 +147,7 @@ class Database_Manager
         MySqlCommand command = connection.CreateCommand();
 
         // la query para hacer el select
-        command.CommandText = "Insert into users where nick = " + param1 + " and password = " + param2;
+        //command.CommandText = "Insert into users where nick = " + param1 + " and password = " + param2;
 
         //Ejecucion de la query y console log del nick para comprovar que haya ido bien
         try

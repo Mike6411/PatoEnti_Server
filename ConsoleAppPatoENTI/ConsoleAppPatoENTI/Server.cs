@@ -8,11 +8,11 @@ class Server
 {
     static void Main(String[] args)
     {
+
         bool bServerOn = true;
        
         //Instancio los servicios de red de mi server
         Network_Manager network_Manager= new Network_Manager();
-        //Database_Manager database_Manager = new Database_Manager();
 
 
         //Mientras sea true el server se mantiene encendido
@@ -29,8 +29,8 @@ class Server
         {
             //Iniciar servicios de red
             network_Manager.Start_Network_Service();
-            //Servicio de la base de Datos
-            //database_Manager.Start_Database_Service();
+            //Obtener los datos de la DB
+            network_Manager.GetRaceData();
         }
     }
 }
