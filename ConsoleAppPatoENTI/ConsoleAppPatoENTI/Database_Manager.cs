@@ -107,6 +107,63 @@ class Database_Manager
         End_Database_Service();
     }
 
+    void RaceQuery(MySqlConnection connection, string param1, string param2)
+    {
+
+        Start_Database_Service();
+
+        //Abrimos el reader que nos permite accesar al stream de rows de SQL
+        MySqlDataReader reader;
+        MySqlCommand command = connection.CreateCommand();
+
+        // la query para hacer el select
+        command.CommandText = "Insert into users where nick = " + param1 + " and password = " + param2;
+
+        //Ejecucion de la query y console log del nick para comprovar que haya ido bien
+        try
+        {
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["nick"].ToString());
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        End_Database_Service();
+    }
+
+    void VersionQuery(MySqlConnection connection, string param1, string param2)
+    {
+
+        Start_Database_Service();
+
+        //Abrimos el reader que nos permite accesar al stream de rows de SQL
+        MySqlDataReader reader;
+        MySqlCommand command = connection.CreateCommand();
+
+        // la query para hacer el select
+        command.CommandText = "Insert into users where nick = " + param1 + " and password = " + param2;
+
+        //Ejecucion de la query y console log del nick para comprovar que haya ido bien
+        try
+        {
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["nick"].ToString());
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        End_Database_Service();
+    }
 
 
 
