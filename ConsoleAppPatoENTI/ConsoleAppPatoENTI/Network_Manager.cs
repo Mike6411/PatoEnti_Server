@@ -13,6 +13,8 @@ public class Network_Manager
     private int lastTimePing;
     private List<Client> disconnectClients;
 
+    new Database_Manager databaseManager;
+
     public Network_Manager()
     {
         //Lista de clientes que se van conectando al servidor
@@ -172,14 +174,18 @@ public class Network_Manager
         }
     }
 
-    //Manejado del caso "0" aka Login que comprueva que el usuario y la password existan consultando
+    //Manejado del caso "0" aka Login que comprueva que el usuario y la password existan consultando ->
     //con la DB a partir de los datos que recibe de Unity desde el Login_Script
     private void Login(string username, string password)
     {
+        int raceresult;
+
         Console.WriteLine("Peticion de " + username + " usando la pass: " + password);
+        raceresult = databaseManager.LoginQuery(username, password);
+        Console.WriteLine(raceresult);
     }
 
-    //Manejado del caso "1" aka Register que inserta el usuario con su password y su raza
+    //Manejado del caso "1" aka Register que inserta el usuario con su password y su raza ->
     //a la DB a partir de los datos que recibe de Unity desde el Register_Script
     private void Register(string username, string password, string race)
     {
@@ -225,6 +231,8 @@ public class Network_Manager
     {
         client.SetWaitingPing(false);
     }
+
+    //El nombre lo explica
     public void DisconnectClients()
     {
 
@@ -249,6 +257,7 @@ public class Network_Manager
         //Libero el mutex
         clientListMutex.ReleaseMutex();
     }
+
 }
 
 /*string[] parameters = data.Split('/');

@@ -49,38 +49,72 @@ class Database_Manager
     }
 
 
-    void LoginQuery(MySqlConnection connection, string param1, string param2)
+    public int LoginQuery(string param1, string param2)
     {
-
         Start_Database_Service();
 
         //Abrimos el reader que nos permite accesar al stream de rows de SQL
         MySqlDataReader reader;
         MySqlCommand command = connection.CreateCommand();
+
+        //la variable que usaré para pasar la raza que el user tiene seleccionada
+        int response = 0;
+
+        // 0 es el valor de que algo ha ido mal
+        // 1 corresponde a la raza 1
+        // 2 corresponde a la raza 2
 
         // la query para hacer el select
         command.CommandText = "Select * from users where nick = " + param1 + " and password = " + param2;
 
-        //Ejecucion de la query y console log del nick para comprovar que haya ido bien
+        //Ejecucion de la query y console log del nick para comprovar que user exista
         try
         {
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader["nick"].ToString());
+                Console.WriteLine("Verifying user");
             }
+            reader.Close();
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
+            return response;
+        }
+
+        Console.WriteLine("User verified");
+
+        command.CommandText = "Select userrace from users where nick = " + param1 + "";
+
+        //Query para pillar la raza del user
+        try
+        {
+            //string para pillar el valor de la raza que retorna.
+            string temp;
+
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["userrace"].ToString());
+                temp = reader["userrace"].ToString();
+                response= Convert.ToInt32(temp);
+            }
+            reader.Close();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return response;
         }
 
         End_Database_Service();
+        Console.WriteLine(response);
+        return response;
     }
 
-    void RegisterQuery(MySqlConnection connection, string param1, string param2)
+    public void RegisterQuery(string param1, string param2, string param3)
     {
-
         Start_Database_Service();
 
         //Abrimos el reader que nos permite accesar al stream de rows de SQL
@@ -107,9 +141,8 @@ class Database_Manager
         End_Database_Service();
     }
 
-    void RaceQuery(MySqlConnection connection, string param1, string param2)
+    public void RaceQuery(string param1, string param2)
     {
-
         Start_Database_Service();
 
         //Abrimos el reader que nos permite accesar al stream de rows de SQL
@@ -136,9 +169,8 @@ class Database_Manager
         End_Database_Service();
     }
 
-    void VersionQuery(MySqlConnection connection, string param1, string param2)
+    public void VersionQuery(string param1, string param2)
     {
-
         Start_Database_Service();
 
         //Abrimos el reader que nos permite accesar al stream de rows de SQL
